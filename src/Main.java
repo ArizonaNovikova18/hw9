@@ -28,14 +28,13 @@ public class Main {
     public static void task2() {
         System.out.println("Задание 2");
         int[] arr = generateRandomArray();
-        int maxValue = -1;
-        int min = maxValue;
+        int maxValue = Integer.MAX_VALUE;
+        int min = Integer.MIN_VALUE;
         for (int i = 0; i < arr.length-1; i++) {
-            if (maxValue < arr[i]) {
+            if (maxValue > arr[i]) {
                 maxValue = arr[i];
             }
-            min = maxValue;
-            if (min > arr[i]) {
+            if (min < arr[i]) {
                 min = arr[i];
             }
         }
@@ -47,11 +46,10 @@ public class Main {
         System.out.println("Задание 3");
         int[] arr = generateRandomArray();
         long sum = 0;
-        double averageValue = 0;
         for (int i = 0; i <= arr.length-1; i++) {
             sum = sum + arr[i];
-            averageValue = (double) sum / arr.length;
         }
+         double averageValue = (double) sum / arr.length;
         System.out.println("Средняя сумма трат за месяц составила " + averageValue + " рублей");
     }
     public static void task4() {
